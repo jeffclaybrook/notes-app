@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Notes App",
   description: "A simple note-taking PWA built with Next.js",
   manifest: "/manifest.json",
-  themeColor: "#1e40af"
+  themeColor: "#4c5d87"
 }
 
 export default function RootLayout({

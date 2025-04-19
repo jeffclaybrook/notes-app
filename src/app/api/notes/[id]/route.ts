@@ -4,10 +4,10 @@ import Note from "@/models/note"
 
 export async function PATCH(
  req: Request,
- context: { params: { id: string } }
+ { params }: { params: { id: string } }
 ) {
  await db()
- const { id } = context.params
+ const { id } = params
  const data = await req.json()
  const note = await Note.findByIdAndUpdate(id, data, { new: true })
  return NextResponse.json(note)
@@ -15,10 +15,10 @@ export async function PATCH(
 
 export async function DELETE(
  req: Request,
- context: { params: { id: string } }
+ { params }: { params: { id: string } }
 ) {
  await db()
- const { id } = context.params
+ const { id } = params
  await Note.findByIdAndDelete(id)
  return NextResponse.json({ success: true })
 }
